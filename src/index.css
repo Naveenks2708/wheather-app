@@ -1,10 +1,11 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(121, 115, 115, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -19,7 +20,7 @@ body {
   align-content: center;
 }
 .main {
-  background-color: white;
+  background-color: rgb(134, 129, 129);
   width: 450px;
   padding: 10px;
   border-radius: 5px;
@@ -27,17 +28,35 @@ body {
 }
 .con {
   display: flex;
+  align-items: center;
   border: 2px solid black;
   flex: 1;
   justify-content: space-between;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 25px;
   margin-top: 20px;
+  margin-bottom: 35px;
 }
+
 .searching > img {
-  width: 30px;
+  width: 25px;          
+  height: 25px;         
+  border-radius: 50%;  
+  object-fit: cover;   
   cursor: pointer;
+  background-color: white; 
+  padding: 3px;        
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); 
 }
+
+.searching > img:hover {
+  transform: scale(1.1);           
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  transition: 0.2s ease;
+}
+
+
+
 input {
   width: 100%;
   border: none;
@@ -47,25 +66,34 @@ input {
 }
 .imgage > img {
   width: 200px;
-  display: flex;
-  /* border: 5px solid red; */
+  height: 200px;      
+  border-radius: 50%;  
+  object-fit: cover;   
+  display: block;       
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
+
 .imgage {
   display: flex;
   justify-content: center;
+  margin-top: 10px;   
 }
+
 .detail {
   color: black;
   /* border: 5px solid green; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 25px;
+  
 }
 .lat {
   color: black;
   /* border: 5px solid red; */
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .latitude,
 .longitude {
@@ -79,12 +107,18 @@ input {
   color: black;
   /* border: 5px solid red; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .humidity > img,
 .windspeed > img {
-  width: 100px;
-  height: 80px;
+  width: 100px;         
+  height: 100px;        
+  border-radius: 50%;   
+  object-fit: cover;    
+  display: block;
+  border: 3px solid white;        
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 .humidity,
 .windspeed {
@@ -103,8 +137,41 @@ input {
 .location {
   font-weight: 700;
   font-size: 20px;
-  color: rgb(116, 157, 157);
+  color: rgb(0, 9, 9);
 }
+
+.temp, .latitude, .longitude, .humidity, .windspeed {
+  background-color: #ac9797;     
+  color: #000;                  
+  border: 2px solid #e4d7d7;        
+  border-radius: 10px;          
+  padding: 10px 15px;           
+  margin: 10px;                 
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  font-weight: 600;
+  min-width: 120px;              
+}
+
+.temp { background-color: #f9e79f; }        /* light yellow */
+.latitude { background-color: #aed6f1; }    
+.longitude { background-color: #a9dfbf; }   
+.humidity { background-color: #d7bde2; }    
+.windspeed { background-color: #f5b7b1; }  
+.welcome {
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: 700;
+} 
+.subtitle {
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
 @media screen and (max-width: 470px) {
   .main {
     width: 350px;
