@@ -71,34 +71,39 @@ const App = () => {
 setText(e.target.value)
   }
   return (
-    <>
-      <div className="center">
-        <div className="main">
-          <div className="con">
-            <input
-              type="text"
-              placeholder="search city"
-              value={text}
-              onChange={handleCity}
-            />
-            <div className="searching">
-              <img src={searc} alt="" onClick={search} />
-            </div>
-          </div>
-          <Whetherdetsil
-            img={img}
-            temp={temp}
-            location={location}
-            country={country}
-            latitude={latitude}
-            longitude={longitude}
-            humidit={humidit}
-            windspeed={windspeed}
+  <>
+    <div className="center">
+      <div className="main">
+        <h2 className="welcome">Hi Jamie 👋</h2>
+        <p className="subtitle">Check the weather instantly for any city!</p>
+
+        <div className="con">
+          <input
+            type="text"
+            placeholder="Enter city name..."
+            value={text}
+            onChange={handleCity}
+            onKeyDown={(e) => e.key === 'Enter' && search()} // Press Enter to search
           />
+          <div className="searching">
+            <img src={searc} alt="Search" onClick={search} />
+          </div>
         </div>
+
+        <Whetherdetsil
+          img={img}
+          temp={temp}
+          location={location}
+          country={country}
+          latitude={latitude}
+          longitude={longitude}
+          humidit={humidit}
+          windspeed={windspeed}
+        />
       </div>
-    </>
-  );
+    </div>
+  </>
+);
 }
 
 export default App
